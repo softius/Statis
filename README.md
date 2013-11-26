@@ -10,8 +10,8 @@ Statis requires nodejs 0.10.x
 To install from GitHub, clone the repository and install dependencies using npm:
 
 ```
-git clone git://github.com/softius/statis.git
-cd statis
+git clone git://github.com/softius/Statis.git
+cd Statis
 npm install
 node console
 ```
