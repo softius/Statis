@@ -13,7 +13,7 @@ To install from GitHub, clone the repository and install dependencies using npm:
 git clone git://github.com/softius/Statis.git
 cd Statis
 npm install
-node console
+node console.js
 ```
 
 ## Configuration
