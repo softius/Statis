@@ -1,0 +1,34 @@
+{
+	"nodes": [
+		{
+			"label": "Facebook [HTTP]",
+			"http": {
+				"hostname": "facebook.com",
+				"port": 80,
+				"path": "/",
+				"method": "GET"
+			}
+		},
+		{
+			"label": "Facebook [Socket]",
+			"socket": {
+				"host": "facebook.com",
+				"port": 80
+			}
+		},
+		{
+			"label": "Google [Socket]",
+			"socket": {
+				"host": "google.com",
+				"port": 80
+			}
+		},
+		{
+			"label": "This does not exist [Socket]",
+			"socket": {
+				"host": "this-does-not-exist.com",
+				"port": 80
+			}
+		}
+	]
+}

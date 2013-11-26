@@ -1,0 +1,21 @@
+{
+  "name": "statis",
+  "version": "0.1.0",
+  "description": "Simple monitoring tool",
+  "main": "console.js",
+  "dependencies": {
+    "nconf": "~0.6.8",
+    "colors": "~0.6.2",
+    "mysql": "~2.0.0"
+  },
+  "repository": {
+    "type": "git", 
+    "url": "http://github.com/softius/statis.git"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Iacovos Constantinou",
+  "license": "MIT"
+}
