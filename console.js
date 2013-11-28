@@ -1,11 +1,31 @@
 var statis = require('./lib/statis')
 
-var fs = require('fs')
-var nconf = require('nconf')
-
 var colors = require('colors')
 
-nconf.file({file: './config.json'})
+var optimist = require('optimist')
+var argv = optimist
+	.usage('Usage: $0')
+	// Help 
+	.default('h')
+	.alias('h', 'help')
+    .describe('h', 'Print this help')
+	// Configuration source
+	.default('c', 'config.json')
+	.alias('c', 'config')
+    .describe('c', 'Specify the configuration file')
+	.argv
+
+// Print help screen
+if (argv.h) {
+	console.log(optimist.help())
+	return
+}
+
+var fs = require('fs')
+var nconf = require('nconf')
+configFile = argv.c
+
+nconf.file({file: configFile})
 
 var nodes = nconf.get('nodes')
 if (typeof nodes === "undefined") {
@@ -20,12 +40,10 @@ statis.on('result', function(result) {
 	} else {
 		console.log(message.green)
 	}
-	
 })
 
 function statis_analysis()
 {
-
 	for (var i=0; i<nodes.length; i++) {
 		if (nodes[i].http)
 			statis.http(nodes[i])
