@@ -37,8 +37,10 @@ statis.on('result', function(result) {
 	var message = result.message
 	if (result.status == 'error') {
 		console.log(message.red)
-	} else {
+	} else if (result.status == 'success') {
 		console.log(message.green)
+	} else if (result.status == 'warning') {
+		console.log(message.yellow)
 	}
 })
 
