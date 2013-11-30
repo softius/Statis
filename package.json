@@ -7,7 +7,8 @@
     "nconf": "~0.6.8",
     "colors": "~0.6.2",
     "mysql": "~2.0.0",
-    "optimist": "~0.6.0"
+    "optimist": "~0.6.0",
+    "pushover-notifications": "~0.1.6"
   },
   "repository": {
     "type": "git", 

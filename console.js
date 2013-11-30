@@ -23,16 +23,17 @@ if (argv.h) {
 
 var fs = require('fs')
 var nconf = require('nconf')
+
+// Parse configuration file
 configFile = argv.c
-
 nconf.file({file: configFile})
-
 var nodes = nconf.get('nodes')
 if (typeof nodes === "undefined") {
 	console.log("No configuration found".red)
 	process.exit(1)
 }
 
+// Listen to results and report them to console
 statis.on('result', function(result) {
 	var message = result.message
 	if (result.status == 'error') {
@@ -44,6 +45,10 @@ statis.on('result', function(result) {
 	}
 })
 
+// Register listeners for notifications i.e. pushover
+statis.registerNotificationListeners(nconf.get('notifications'))
+
+// Do the work
 function statis_analysis()
 {
 	for (var i=0; i<nodes.length; i++) {
@@ -58,6 +63,3 @@ function statis_analysis()
 	}
 }
 statis_analysis()
-
-
-

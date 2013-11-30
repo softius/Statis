@@ -1,4 +1,10 @@
 {
+	"notifications": {
+		"pushover": {
+			"users": ["userkey1", "userkey2"],
+			"token": "token string"
+		}
+	},
 	"nodes": [
 		{
 			"label": "Facebook [HTTP]",
