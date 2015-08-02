@@ -8,8 +8,8 @@
     "cron": "^1.0.9",
     "mysql": "^2.0.1",
     "nconf": "^0.6.9",
-    "optimist": "~0.6.0",
-    "pushover-notifications": "^0.1.9"
+    "pushover-notifications": "^0.1.9",
+    "yargs": "^3.17.1"
   },
   "repository": {
     "type": "git",

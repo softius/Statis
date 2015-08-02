@@ -2,28 +2,20 @@ var statis = require('./lib/statis')
 
 var colors = require('colors')
 
-var optimist = require('optimist')
-var argv = optimist
-	.usage('Usage: $0')
-	// Help
-	.default('h')
-	.alias('h', 'help')
-    .describe('h', 'Print this help')
-	// Configuration source
+var argv = require('yargs')
+	// Configuration
 	.default('c', 'config.json')
 	.alias('c', 'config')
-    .describe('c', 'Specify the configuration file')
-    // Interval in seconds
+		.describe('c', 'Specify the configuration file')
+	// Help
+	.help('h')
+	.alias('h', 'help')
+		.describe('h', 'Print this help')
+	// Daemon mode
 	.default('d')
 	.alias('d', 'daemon')
      .describe('d', 'Run as a daemon')
 	.argv
-
-// Print help screen
-if (argv.h) {
-	console.log(optimist.help())
-	return
-}
 
 var fs = require('fs')
 var nconf = require('nconf')
